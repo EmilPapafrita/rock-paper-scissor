@@ -1,4 +1,4 @@
-game();
+/*game();
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
@@ -46,9 +46,9 @@ function playRound(playerSelection, computerSelection) {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
+*/
 /* added async in order to use the sleep function to pause between each round */
-async function game()
+/*async function game()
 {
     for (let i = 1; i <= 5; i++) 
     {
@@ -56,7 +56,7 @@ async function game()
         const playerSelection = prompt("Type in your choice! ex: \nRock\nPaper\nScissor");
         console.log(playRound(playerSelection, computerSelection));
         await sleep(1500); /* in milliseconds */
-    }
-}
+    //}
+//}
 
 
