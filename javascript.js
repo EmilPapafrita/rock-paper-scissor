@@ -1,4 +1,3 @@
-/*game();
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
@@ -43,20 +42,29 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+//caching dom
+const result = document.querySelector(".results > h1");
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissor = document.querySelector('.scissor');
+
+function game(playerSelection) {
+    const computerSelection = getComputerChoice();
+    result.innerHTML = playRound(playerSelection, computerSelection);
 }
-*/
-/* added async in order to use the sleep function to pause between each round */
-/*async function game()
-{
-    for (let i = 1; i <= 5; i++) 
-    {
-        const computerSelection = getComputerChoice();
-        const playerSelection = prompt("Type in your choice! ex: \nRock\nPaper\nScissor");
-        console.log(playRound(playerSelection, computerSelection));
-        await sleep(1500); /* in milliseconds */
-    //}
-//}
 
+function main() {
+    rock.addEventListener('click', function() {
+        game('rock');
+    })
 
+    paper.addEventListener('click', function() {
+        game('paper');
+    })
+
+    scissor.addEventListener('click', function() {
+        game('scissor');
+    })
+}
+
+main();
