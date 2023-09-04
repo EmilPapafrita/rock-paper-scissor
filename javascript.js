@@ -42,18 +42,23 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+const userScore = 0;
+const compScore = 0;
 //caching dom
 const result = document.querySelector(".results > h1");
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissor = document.querySelector('.scissor');
+const userScore_span = document.getElementById("userScore");
+const compScore_span = document.getElementById("compScore");
 
 function game(playerSelection) {
     const computerSelection = getComputerChoice();
+    changeImage(playerSelection, computerSelection);
     result.innerHTML = playRound(playerSelection, computerSelection);
 }
 
-function main() {
+function main() { //On click of the rps button start game with selected option
     rock.addEventListener('click', function() {
         game('rock');
     })
@@ -65,6 +70,44 @@ function main() {
     scissor.addEventListener('click', function() {
         game('scissor');
     })
+}
+
+/* function to change images based off of the computer and user selection */
+function changeImage(playerSelection, computerSelection) 
+{
+    //caching the dom for image information by using the image ID
+    var compImage = document.getElementById('compImage');
+    var userImage = document.getElementById('userImage');
+
+    switch (computerSelection) {
+        case "rock":
+            compImage.src = "./images/theRock.png"; //changing image src for computer selection
+            switch (playerSelection) 
+            {   //changing image src for the playerselection
+                case "rock": userImage.src = "./images/theRock.png"; break;
+                case "paper": userImage.src = "./images/paper.png"; break;
+                case "scissor": userImage.src = "./images/scissor.png"; break;
+            }
+            break;
+        case "paper":
+            compImage.src = "./images/paper.png";
+            switch (playerSelection) 
+            {
+                case "rock": userImage.src = "./images/theRock.png"; break;
+                case "paper": userImage.src = "./images/paper.png"; break;
+                case "scissor": userImage.src = "./images/scissor.png"; break;
+            }
+            break;
+        case "scissor":
+            compImage.src = "./images/scissor.png";
+            switch (playerSelection) 
+            {
+                case "rock": userImage.src = "./images/theRock.png"; break;
+                case "paper": userImage.src = "./images/paper.png"; break;
+                case "scissor": userImage.src = "./images/scissor.png"; break;
+            }
+            break;
+    }
 }
 
 main();
