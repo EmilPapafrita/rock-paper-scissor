@@ -1,20 +1,22 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: aqua;
+    background-color: rgb(246, 238, 216);
     margin: 0px;
 }
 
 .header {
-    background-color: blue;
+    background-color: rgb(17, 17, 117);
+    color: beige;
     overflow: hidden; /*Use to prevent overflow inside a 
                         div; in this case I just need it to keep 
                         the top bar in place*/
     text-align: center;
 }
 
-h2 { 
+.header h2 { 
     margin: 0px; /* remove huge gap around text*/
+    padding: 2px;
 }
 
 /**/
@@ -23,11 +25,9 @@ img { /*change image size*/
     max-height: 50%
 }
 .main {
-    background-color: orange;
     padding: 20px;
 }
 .main .players {
-    background-color: red;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -35,38 +35,51 @@ img { /*change image size*/
     margin: 0%;
     padding: 0%;
     text-align: center;
+    gap: 1em;
+}
+span {
+    font-weight: bolder;
+    background-color: aqua;
+    border: 3px dashed darkblue;
+    border-radius: 20px;
+    padding: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .main .user {
-    background-color: green;
-    border: 1px solid black;
+    background-color: lightcoral;
+    border: 10px solid red;
+    border-radius: 50px;
     margin: 0px;
 }
 .main .computer {
-    background-color: yellow;
-    border: 1px solid black;
+    background-color: lightcoral;
+    border: 10px solid red;
+    border-radius: 50px;
     margin: 0px;
 }
 
 /**/
 .rps {
-    background-color: purple;
     padding: 20px;
 }
 .rps .options {
-    background-color: black;
     flex: 1;
     display: flex;
     justify-content: center;
     padding: 10px;
-    gap: 5em;
+    gap: 3em;
 }
 button {
-    border: 3px solid green;
-    border-radius: 5px;
-    padding: 15px;
+    border: 4px solid green;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /**/
 .results {
     text-align: center;
+    color: darkblue;
 }

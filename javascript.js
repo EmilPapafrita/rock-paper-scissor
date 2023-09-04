@@ -1,3 +1,5 @@
+var userScore = 0; //var instead of comp because global variable??
+var compScore = 0;
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
@@ -9,32 +11,30 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-    playerSelection = playerSelection.trim();
     switch (computerSelection) {
         case "rock":
             switch (playerSelection) 
             {
                 case "rock": return "Tie!"; break;
-                case "paper": return "You Win! Paper beats Rock"; break;
-                case "scissor": return "You Lose! Rock beats Scissor"; break;
+                case "paper": userScore++; return "You Win! Paper beats Rock"; break;
+                case "scissor": compScore++; return "You Lose! Rock beats Scissor"; break;
                 default: return "Wrong Input!"; break;
             }
             break;
         case "paper":
             switch (playerSelection) 
             {
-                case "rock": return "You Lose! Paper beats Rock"; break;
+                case "rock": compScore++; return "You Lose! Paper beats Rock"; break;
                 case "paper": return "Tie!"; break;
-                case "scissor": return "You Win! Scissor beats Paper"; break;
+                case "scissor": userScore++; return "You Win! Scissor beats Paper"; break;
                 default: return "Wrong Input!"; break;
             }
             break;
         case "scissor":
             switch (playerSelection) 
             {
-                case "rock": return "You Win! Rock beats Scissor"; break;
-                case "paper": return "You Lose! Scissor beats Paper"; break;
+                case "rock": userScore++; return "You Win! Rock beats Scissor"; break;
+                case "paper": compScore++; return "You Lose! Scissor beats Paper"; break;
                 case "scissor": return "Tie!"; break;
                 default: return "Wrong Input!"; break;
             }
@@ -42,8 +42,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const userScore = 0;
-const compScore = 0;
+
 //caching dom
 const result = document.querySelector(".results > h1");
 const rock = document.querySelector('.rock');
@@ -56,6 +55,8 @@ function game(playerSelection) {
     const computerSelection = getComputerChoice();
     changeImage(playerSelection, computerSelection);
     result.innerHTML = playRound(playerSelection, computerSelection);
+    userScore_span.innerHTML = userScore;
+    compScore_span.innerHTML = compScore;
 }
 
 function main() { //On click of the rps button start game with selected option
