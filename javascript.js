@@ -1,7 +1,7 @@
-var userScore = 0; //var instead of comp because global variable??
+var userScore = 0; //var instead of const for global variable
 var compScore = 0;
 
-function getComputerChoice() {
+function getComputerChoice() { //get random computer choice for rock, paper or scissor
     let choice = Math.floor(Math.random() * 3);
     switch (choice) {
         case 0: return "rock"; break;
@@ -10,8 +10,9 @@ function getComputerChoice() {
     }
 }
 
+/* starts the game round once the function receives the player and computer choice  */
 function playRound(playerSelection, computerSelection) {
-    switch (computerSelection) {
+    switch (computerSelection) { //for every possible outcome return a unique string 
         case "rock":
             switch (playerSelection) 
             {
@@ -51,15 +52,15 @@ const scissor = document.querySelector('.scissor');
 const userScore_span = document.getElementById("userScore");
 const compScore_span = document.getElementById("compScore");
 
-function game(playerSelection) {
+function game(playerSelection) { //receives player selection to start game
     const computerSelection = getComputerChoice();
     changeImage(playerSelection, computerSelection);
-    result.innerHTML = playRound(playerSelection, computerSelection);
-    userScore_span.innerHTML = userScore;
+    result.innerHTML = playRound(playerSelection, computerSelection); /* change the text to display the win/lose result */
+    userScore_span.innerHTML = userScore; /* change score text to current score */
     compScore_span.innerHTML = compScore;
 }
 
-function main() { //On click of the rps button start game with selected option
+function main() { //On click of the rps button start game with player selected option
     rock.addEventListener('click', function() {
         game('rock');
     })
@@ -111,4 +112,4 @@ function changeImage(playerSelection, computerSelection)
     }
 }
 
-main();
+main(); /* calling the main function to begin running program */

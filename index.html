@@ -6,26 +6,27 @@
     <link rel = "stylesheet" href = "styles.css">
     <title>RockPaperScissorGame</title>
 </head>
-<body>
-    <div class = "header">
+<body> <!--Divided into multiple vertical section-->  
+
+    <div class = "header"> <!-- Top bar for game title-->
         <h2>Rock, Paper, Scissor Game</h2>
     </div>
 
-    <div class = "main">
+    <div class = "main"> <!-- user/computer scores and choices -->
         <div class="players">
             <div class = "user">
-                <span id="userScore">0</span><h1>User</h1>
+                <span id="userScore">0</span><h2>User</h2>
                 <img src = "./images/theRock.png" id = "userImage">
             </div>
 
             <div class = "computer">
-                <span id="compScore">0</span><h1>Computer</h1>
+                <span id="compScore">0</span><h2>Computer</h2>
                 <img src = "./images/scissor.png" id = "compImage">
             </div>
         </div>
     </div>
 
-    <div id = "button" class = "rps">
+    <div id = "button" class = "rps"> <!-- three buttons for rps -->
         <div class = "options">
             <div class="rock"><button id="btn">Rock</button></div>
             <div class="paper"><button id="btn">Paper</button></div>
@@ -33,10 +34,10 @@
         </div>   
     </div>
 
-    <div class = "results">
+    <div class = "results"> <!-- win or lose result text -->
         <h1>Click one of the buttons to start game!</h1>
     </div>
     
-    <script src="javascript.js"></script>
+    <script src="javascript.js"></script> <!-- Moved to bottom for game to run properly-->
 </body>
 </html>
