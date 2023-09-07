@@ -1,1 +1,3 @@
 # rock-paper-scissor
+
+Programmed a Rock-Paper-Scissors game using HTML, CSS, and JavaScript that lets a player challenge a computer opponent. To play this web-based application, the user simply clicks one of the buttons for their choice of rock, paper, or scissors, and a corresponding image of their selection is displayed under 'User'. Simultaneously, the computer makes a random selection of rock, paper, or scissors, and their results are displayed under 'Computer'. The game then determines the winner based on the classic rules of Rock-Paper-Scissors and updates the score accordingly, while also providing the results in text towards the bottom of the screen. 
